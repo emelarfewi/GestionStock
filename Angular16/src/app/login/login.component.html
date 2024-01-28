@@ -1,1 +1,10 @@
-<form #l
+<form #l="ngForm" (ngSubmit)="login(l)">
+  Email <br>
+  <input type="email" required ngModel name="email"><br>
+  Password <br>
+  <input type="password" required ngModel name="pwd" minlength="8"><br>
+  <button type="submit"> Log In </button>
+</form>
+<a routerLink="/forgotpassword">Forgot password?</a>
+<hr>
+<a routerLink="/signup"> Create new account </a>
