@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <form #s="ngForm" (ngSubmit)="signup(s)">
+    First Name <br>
+    <input type="text" required ngModel name="nom"><br>
+    Last Name <br>
+    <input type="text" required ngModel name="prenom"><br>
+    Email <br>
+    <input type="email" required ngModel name="email"><br>
+    Password <br>
+    <input type="password" required ngModel name="pwd" minlength="8"><br>
+    <button type="submit"> Sign Up </button>
+  </form>
+  <a routerLink="/login"> Already have an account? </a>
+</body>
+</html>
