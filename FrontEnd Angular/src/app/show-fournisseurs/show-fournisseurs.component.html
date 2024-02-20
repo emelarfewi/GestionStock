@@ -1,0 +1,41 @@
+<title>Fournisseurs</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+
+    <button class="add-button" routerLink="/addfournisseur">Ajouter</button>
+
+    <table class="table table-borderless at-2">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Adresse</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+
+      </tr>
+      <tr *ngFor="let f of fournisseurs; let i = index">
+        <td>{{ i + 1 }}</td>
+
+        <td>{{f.nomFrn}} </td>
+        <td>{{f.prenomFrn}}</td>
+        <td>{{f.email}}</td>
+        <td>{{f.phone}}</td>
+        <td>{{f.adresse}}</td>
+        <td>
+          <button  class="edit-button" routerLink="/updatefournisseur/id/{{f.idFrn}}"><i class='fas fa-edit'></i></button>
+        </td>
+        <td>
+          <button  class="delete-button" routerLink="/deletefournisseur/{{f.idFrn}}"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>

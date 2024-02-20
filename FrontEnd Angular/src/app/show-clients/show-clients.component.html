@@ -1,0 +1,49 @@
+<title>Clients</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+
+    <button class="add-button" routerLink="/addclient">Ajouter</button>
+
+    <table class="table table-borderless at-2">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Prenom</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Adresse</th>
+        <th>Modifier</th>
+        <th>Supprimer</th>
+
+      </tr>
+      <tr *ngFor="let c of clients; let i = index">
+        <td>{{ i + 1 }}</td>
+
+        <td>{{c.nomClt}} </td>
+        <td>{{c.prenomClt}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.phone}}</td>
+        <td>{{c.adresse}}</td>
+        <td>
+          <button  class="edit-button" routerLink="/updateente/id/{{c.idClt}}"><i class='fas fa-edit'></i></button>
+        </td>
+        <td>
+          <button  class="delete-button" routerLink="/deletevente/{{c.idClt}}"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+<title>Articles</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+
+    <button class="add-button" routerLink="/addarticle">Ajouter</button>
+    <!--Search Box-->
+
+    <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+
+    <!--Articles List-->
+    <table class="table table-borderless at-2">
+      <thead>
+      <tr>
+          <th>Id</th>
+          <th>Nom Article</th>
+          <th>Categorie</th>
+          <th>quantite</th>
+          <th>Prix Unitaire</th>
+          <th>Date de Fabrication</th>
+          <th>Date d'Expiration</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+          </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let a of articles; let i = index">
+          <tr *ngIf="searchText === ''
+          || a.nomArt.includes(searchText) || a.nomArt.toLowerCase().includes(searchText) || a.nomArt.toUpperCase().includes(searchText)
+          || a.categorie.includes(searchText) || a.categorie.toLowerCase().includes(searchText) || a.categorie.toUpperCase().includes(searchText)">
+            <td>{{ i + 1 }}</td>
+            <td>{{a.nomArt}}</td>
+            <td>{{a.categorie}}</td>
+            <td>{{a.quantite}}</td>
+            <td>{{a.prixUnit}}</td>
+            <td>{{a.dateFabrication}}</td>
+            <td>{{a.dateExpiration}}</td>
+            <td>
+              <button class="edit-button" routerLink="/updatearticle/id/{{a.idArt}}"><i class='fas fa-edit'></i></button>
+            </td>
+            <td>
+              <button class="delete-button" routerLink="/deletearticle/{{a.idArt}}"><i class="fa fa-trash"></i></button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+
+
+
+

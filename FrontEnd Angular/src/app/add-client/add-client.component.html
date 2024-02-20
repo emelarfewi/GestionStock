@@ -1,0 +1,39 @@
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+    <form #add="ngForm" (ngSubmit)="ajouter(add)" class="section">
+      <h1>Ajouter Client</h1>
+      <div class="form-group">
+        <label for="nomClt">Nom</label>
+        <input type="text" ngModel name="nom" class="form-control" id="nomClt" placeholder="Nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="prenomClt">Prenom</label>
+        <input type="text" ngModel name="prenom" class="form-control" id="prenomClt" placeholder="Prenom" required>
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" ngModel name="email" class="form-control" id="email" placeholder="Email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneClt">Phone</label>
+        <input type="number" ngModel name="phone" class="form-control" id="phoneClt" placeholder="Phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input type="text" ngModel name="adr" class="form-control" id="adresse" placeholder="Adresse" required>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="button" id="add-client-form" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

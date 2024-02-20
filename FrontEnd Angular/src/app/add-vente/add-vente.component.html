@@ -1,0 +1,45 @@
+<title>Add Vente</title>
+
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+    <h1>Add Vente</h1>
+    <form #add="ngForm" (ngSubmit)="ajouter(add)">
+
+      <div class="form-group">
+        <label for="art" >Article</label>
+        <select name="article" required ngModel class="form-control" id="art">
+          <option value="">Choisir Article:</option>
+          <option *ngFor="let a of articles" [value]="a.nomArt" >{{ a.nomArt }}, {{a.quantite}} pieces disponibles</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="frn">Client</label><br>
+        <select name="client" required ngModel id="frn" class="form-control" >
+          <option value="">Choisir Client:</option>
+          <option *ngFor="let c of clients" [value]="c.nomClt + ' ' + c.prenomClt">{{ c.nomClt }} {{ c.prenomClt }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quentite">Quantite</label>
+        <input type="number" name="quantity" required class="form-control" id="quentite" ngModel (input)="calculatePrice(add)" placeholder="Quentite">
+      </div>
+
+      <div class="form-group">
+        <label for="prix">Prix($)</label>
+        <input type="number" name="prix" [value]="Price" class="form-control" id="prix" placeholder="Prix" >
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="button" (click)="cancel()" id="add-client-form" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

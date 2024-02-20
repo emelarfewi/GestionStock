@@ -1,0 +1,21 @@
+<title>Ajouter Categorie</title>
+
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="mail-content">
+    <h1>Ajouter Article</h1>
+    <form #add="ngForm" (ngSubmit)="ajouter(add)">
+      <div class="form-group">
+        <label for="nomCat">Nom de Categorie</label>
+        <input type="text" required ngModel name="nom" id="nomCat" placeholder="Nom de Categorie" class="form-control">
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="button" id="add-client-form" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">Annuler</button>
+      </div>
+    </form>
+  </div>
+</div>

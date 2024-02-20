@@ -1,0 +1,50 @@
+<title>Ajouter Fournisseur</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+    <h1>Modifier Article</h1><br>
+    <form #edit="ngForm" (ngSubmit)="modifier(edit)">
+      <div class="form-group">
+        <label for="nomArt">Nom d'Article</label>
+        <input type="text" [ngModel]="a.nomArt" name="nom" class="form-control" id="nomArt" placeholder="Nom" required>
+      </div>
+
+
+      <div class="form-group">
+        <label for="categorie">Categorie</label>
+        <select name="categoriy" id="categorie" class="form-control" required [ngModel]="a.categorie">
+          <option value=""> Choisir Categorie: </option>
+          <option *ngFor="let c of categories" value="c.nomCat"> {{c.nomCat}} </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="quantite">Quantite</label>
+        <input type="number" required [ngModel]="a.quantite" name="quantity" id="quantite" placeholder="Quantite" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="prixUnit">Prix Unitaire</label>
+        <input type="number" required [ngModel]="a.prixUnit" name="prixUnit" id="prixUnit" placeholder="Prix Unitaire" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="dateFab">Date de Fabrication</label>
+        <input type="date" required [ngModel]="a.dateFabrication" name="dateFab" id="dateFab" placeholder="Date de Fabrication" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="dateExp">Date d'Expiration</label>
+        <input type="date" required [ngModel]="a.dateExpiration" name="dateExp" id="dateExp" placeholder="Date d'Expiration" class="form-control">
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Modifier</button>
+        <button type="button" id="add-client-form" class="btn btn-secondary" data-dismiss="modal" (click)="cancel()">Annuler</button>
+      </div>
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<title>Log In</title>
+
+<div class="container">
+  <div class="main-content">
+    <h1>Hello Again!</h1>
+    <p>Welcome back you've <br> been missed!</p>
+    <form #l="ngForm" (ngSubmit)="login(l)">
+
+      <div class="form-group">
+        <label for="email">Email</label> <br>
+        <input id="email" type="email" ngModel required name="email" class="form-control" placeholder="Email"><br>
+      </div>
+
+      <div class="form-group">
+        <label for="pwd">Password</label> <br>
+        <input id="pwd" type="password" ngModel required name="pwd" class="form-control" placeholder="Password"><br>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+  </div>
+</div>
+
+

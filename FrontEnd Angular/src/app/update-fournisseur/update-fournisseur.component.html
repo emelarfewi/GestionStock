@@ -1,0 +1,43 @@
+<title>Modifier Fournisseur</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+    <h1>Modifier Article</h1><br>
+    <form #edit="ngForm" (ngSubmit)="modifier(edit)">
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input type="text" [ngModel]="f.nomFrn" name="nom" class="form-control" id="nom" placeholder="Nom">
+      </div>
+
+      <div class="form-group">
+        <label for="prenom">Prenom</label>
+        <input [ngModel]="f.prenomFrn" name="prenom" class="form-control" id="prenom" placeholder="Prenom">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Prenom</label>
+        <input type="text" [ngModel]="f.email" name="email" class="form-control" id="email" placeholder="Email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" [ngModel]="f.phone" name="phone" class="form-control" id="phone"  placeholder="Phone">
+      </div>
+
+      <div class="form-group">
+        <label for="adr">Adresse</label>
+        <input type="text" [ngModel]="f.adresse" name="adr" class="form-control" id="adr" placeholder="Adresse">
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" data-dismiss="modal" class="btn btn-primary" >Modifier</button>
+        <button type="button" id="" data-dismiss="modal" class="btn btn-secondary" (click)="cancel()">Annuler</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+
+

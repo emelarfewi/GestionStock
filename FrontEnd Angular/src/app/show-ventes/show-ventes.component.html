@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+<title>Ventes</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+
+    <button class="add-button" routerLink="/addvente">Ajouter</button>
+
+    <!--Ventes List-->
+    <table class="table table-borderless at-2">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Article</th>
+        <th>Client</th>
+        <th>Quantite</th>
+        <th>Prix($)</th>
+
+      </tr>
+      <tr *ngFor="let v of ventes; let i = index">
+        <td >{{ i + 1 }}</td>
+        <td>{{v.article}}</td>
+        <td>{{v.client}}</td>
+        <td>{{v.quantite}}</td>
+        <td>{{v.prix}}</td>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+

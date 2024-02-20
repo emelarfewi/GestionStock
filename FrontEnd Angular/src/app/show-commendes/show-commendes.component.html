@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+<title>Commendes</title>
+<div class="container">
+  <app-sidenavbar></app-sidenavbar>
+
+  <!--Main-->
+  <div class="main-content">
+
+    <button class="add-button" routerLink="/addcommende">Ajouter</button>
+    <hr>
+
+    <table class="table table-borderless at-2">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Article</th>
+        <th>Fournisseur</th>
+        <th>Quantite</th>
+        <th>Prix($)</th>
+
+      </tr>
+      <tr *ngFor="let c of commendes; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{c.article}}</td>
+        <td>{{c.fournisseur}}</td>
+        <td>{{c.quantite}}</td>
+        <td>{{c.prix}}</td>
+      </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
