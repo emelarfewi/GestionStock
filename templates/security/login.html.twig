@@ -1,0 +1,64 @@
+{% extends "base.html.twig" %}
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <form novalidate="" class="form-box", method="post">
+        {% if app.user %}
+            <div class="mb-3">
+                You are logged in as {{ app.user.Nom}} {{ app.user.Prenom }}, <a href="{{ path('logout') }}">Logout</a>
+            </div>
+        {% else %}
+            <h1>Log In</h1>
+            <h2> Welcome Back </h2>
+            <div class="login-container" id="login">
+                {% if error %}
+                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+                <div class="input-box">
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="input-field" autocomplete="email" required autofocus placeholder="Email">
+                    <i class="bx bx-user"></i>
+                </div>
+        
+                <div class="input-box">
+                    <input type="password" name="password" id="inputPassword" class="input-field" autocomplete="current-password" required placeholder="Password">
+                    <i class="bx bx-lock-alt"></i>
+                </div>
+                
+                <div>
+                    <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+                    <label for="remember_me">Remember Me</label>
+
+                </di>
+        
+                <div class="two">
+                    <a >Forgot password?</a>
+                </div>
+        
+                <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}"
+                >
+
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Log In">
+                </div>
+        
+                <div class="top">
+                    <span>Don't have an account? <a href={{ path('signup') }}>Sign Up</a></span>
+                    <header>Login</header>
+                </div>
+        
+                
+            </div>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
